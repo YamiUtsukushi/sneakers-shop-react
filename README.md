@@ -108,3 +108,13 @@ Ce projet est sous licence MIT. Vous êtes libre de l'utiliser, le modifier et l
 ---
 
 Merci d'avoir exploré ce projet ! J'espère que vous trouverez cette boutique en ligne utile et facile à utiliser. N'hésitez pas à me contacter pour toute question ou suggestion d'amélioration.
+
+---
+
+## 👨‍💻 Auteur
+
+Projet réalisé par **Jayson MOOKEN**.
+🔗 [Mon profil LinkedIn](https://www.linkedin.com/in/jayson-mooken/)
+
+---
+
