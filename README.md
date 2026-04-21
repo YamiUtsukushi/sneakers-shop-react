@@ -2,6 +2,12 @@
 
 > Application e-commerce React complète avec authentification par rôles, panier, favoris, dark mode et dashboard administrateur.
 
+## 🚀 Application déployée
+
+**🔗 [https://tiny-kheer-f60322.netlify.app](https://tiny-kheer-f60322.netlify.app)**
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/production/deploy-status)](https://tiny-kheer-f60322.netlify.app)
+
 ---
 
 ## 📸 Aperçu
