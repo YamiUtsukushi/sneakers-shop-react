@@ -1,10 +1,12 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useShop } from '../context/ShopContext';
 import { useAuth } from '../context/AuthContext';
+import { useTheme } from '../context/ThemeContext';
 
 function Navbar() {
   const { cartCount, state } = useShop();
   const { isLoggedIn, isAdmin, currentUser, logout } = useAuth();
+  const { dark, toggle } = useTheme();
   const navigate = useNavigate();
 
   if (!isLoggedIn || isAdmin) return null;
@@ -27,6 +29,11 @@ function Navbar() {
       </nav>
 
       <div className="navbar-actions">
+        {/* Dark mode toggle */}
+        <button className="btn-theme" onClick={toggle} aria-label="Changer le thème">
+          {dark ? '☀️' : '🌙'}
+        </button>
+
         {/* Favoris */}
         <NavLink to="/favorites" className="nav-icon-link" aria-label="Favoris">
           ❤️ {favCount > 0 && <span className="cart-badge">{favCount}</span>}

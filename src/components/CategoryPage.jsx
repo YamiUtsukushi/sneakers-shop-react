@@ -1,15 +1,22 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import data from '../service/data.json';
 import ProductCard from './ProductCard';
+import { SkeletonGrid } from './SkeletonCard';
 
 function CategoryPage({ categories, title }) {
   const base = data.filter((item) => categories.includes(item.category));
-
+  const [loading, setLoading]         = useState(true);
   const [search, setSearch]           = useState('');
   const [sortBy, setSortBy]           = useState('default');
   const [filterStock, setFilterStock] = useState(false);
   const [priceMax, setPriceMax]       = useState('');
   const [minRating, setMinRating]     = useState(0);
+
+  useEffect(() => {
+    setLoading(true);
+    const t = setTimeout(() => setLoading(false), 600);
+    return () => clearTimeout(t);
+  }, [categories]);
 
   const filtered = useMemo(() => {
     let result = [...base];
@@ -27,11 +34,11 @@ function CategoryPage({ categories, title }) {
   }, [base, search, sortBy, filterStock, priceMax, minRating]);
 
   const hasFilters = search || filterStock || priceMax || minRating > 0 || sortBy !== 'default';
+  const reset = () => { setSearch(''); setSortBy('default'); setFilterStock(false); setPriceMax(''); setMinRating(0); };
 
   return (
     <div className="page-content">
       {title && <h1>{title}</h1>}
-
       <div className="filters-bar">
         <input className="search-input" type="text" placeholder="Rechercher..." value={search} onChange={(e) => setSearch(e.target.value)} />
         <select className="filter-select" value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
@@ -51,26 +58,27 @@ function CategoryPage({ categories, title }) {
           <input type="checkbox" checked={filterStock} onChange={(e) => setFilterStock(e.target.checked)} />
           En stock uniquement
         </label>
-        {hasFilters && (
-          <button className="btn-reset" onClick={() => { setSearch(''); setSortBy('default'); setFilterStock(false); setPriceMax(''); setMinRating(0); }}>
-            Réinitialiser
-          </button>
-        )}
+        {hasFilters && <button className="btn-reset" onClick={reset}>Réinitialiser</button>}
       </div>
 
-      <p className="results-count">{filtered.length} article{filtered.length > 1 ? 's' : ''}</p>
-
-      {filtered.length === 0 ? (
-        <div className="empty-state">
-          <span className="empty-icon">🔍</span>
-          <p>Aucun article ne correspond à votre recherche.</p>
-        </div>
+      {loading ? (
+        <SkeletonGrid count={6} />
       ) : (
-        <div className="articles-container">
-          {filtered.map((item) => (
-            <ProductCard key={item.id} item={item} />
-          ))}
-        </div>
+        <>
+          <p className="results-count">{filtered.length} article{filtered.length > 1 ? 's' : ''}</p>
+          {filtered.length === 0 ? (
+            <div className="empty-state">
+              <span className="empty-icon">🔍</span>
+              <p>Aucun article ne correspond à votre recherche.</p>
+            </div>
+          ) : (
+            <div className="articles-container">
+              {filtered.map((item) => (
+                <ProductCard key={item.id} item={item} />
+              ))}
+            </div>
+          )}
+        </>
       )}
     </div>
   );
