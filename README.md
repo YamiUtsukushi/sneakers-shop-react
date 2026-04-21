@@ -1,120 +1,154 @@
+# KICKS — Boutique de sneakers en ligne
 
-# Projet Boutique d'articles en ligne
-
-Ce projet est une application de boutique en ligne développée en utilisant des technologies modernes telles que **React** et **Vite**. Elle permet aux utilisateurs de parcourir des articles, de les ajouter à leur panier et de finaliser leurs achats.
-
-## Prérequis
-
-Avant de pouvoir lancer ce projet, assurez-vous d'avoir les éléments suivants installés sur votre machine :
-
-- **Node.js** (version 14 ou supérieure) : Vous pouvez le télécharger depuis [nodejs.org](https://nodejs.org/).
-- **npm** : Il est inclus avec Node.js, mais assurez-vous que la version est à jour en exécutant `npm install -g npm`.
-
-## Installation
-
-Suivez les étapes ci-dessous pour installer et lancer le projet localement :
-
-1. **Cloner le dépôt** :
-   
-   Clonez ce dépôt sur votre machine locale en utilisant la commande suivante :
-
-   ```bash
-   git clone https://github.com/YamiUtsukushi/Boutique-d-articles-en-ligne.git
-   ```
-
-2. **Accéder au répertoire du projet** :
-
-   Déplacez-vous dans le répertoire du projet :
-
-   ```bash
-   cd Boutique-d-articles-en-ligne
-   ```
-
-3. **Installer les dépendances** :
-
-   Utilisez npm pour installer toutes les dépendances nécessaires :
-
-   ```bash
-   npm install
-   ```
-
-## Lancer l'application
-
-Pour démarrer l'application en mode de développement, exécutez la commande suivante :
-
-```bash
-npm start
-```
-
-Cette commande ouvrira automatiquement votre navigateur par défaut et chargera l'application à l'adresse suivante : `http://localhost:3000`.
-
-## Fonctionnalités de l'application
-
-Voici un aperçu des fonctionnalités disponibles dans ce projet, développé avec **React** et **Vite** :
-
-1. **Utilisation de React avec Vite** : Le projet utilise React pour créer une interface utilisateur dynamique et réactive, et Vite pour un développement rapide et un rechargement à chaud des modules.
-2. **Affichage de la liste des produits** : Les utilisateurs peuvent voir une liste de tous les produits disponibles à l'achat sur la page d'accueil.
-3. **Recherche de produits** : Une barre de recherche permet aux utilisateurs de trouver rapidement des produits spécifiques par nom ou catégorie.
-4. **Détails du produit** : Chaque produit peut être sélectionné pour afficher une page de détails, qui comprend des informations telles que le nom du produit, la description, le prix et les options disponibles (taille, couleur, etc.).
-5. **Ajout au panier** : Les utilisateurs peuvent ajouter des produits à leur panier d'achat directement depuis la liste des produits ou la page de détails du produit.
-6. **Gestion du panier** : Le panier affiche tous les produits ajoutés, leur quantité, et le prix total. Les utilisateurs peuvent modifier les quantités des articles ou retirer des articles du panier.
-7. **Processus de commande** : Les utilisateurs peuvent initier le processus de commande depuis leur panier pour finaliser leur achat.
-8. **Page de paiement simulée** : Une page de paiement où les utilisateurs peuvent entrer des informations de paiement et d'expédition simulées.
-9. **Confirmation de commande** : Après la finalisation de la commande, une page de confirmation récapitule les articles achetés, les prix, et les informations d'expédition.
-10. **Gestion des utilisateurs** : Système de connexion et d'inscription pour les utilisateurs, permettant de sauvegarder des informations de compte et d'historique des commandes.
-11. **Composants réutilisables** : Utilisation de composants React réutilisables pour créer une interface utilisateur cohérente et maintenable.
-12. **Utilisation d’un état global** : Gestion de l’état de l’application (produits, panier, utilisateur) via des outils comme React Context ou Redux pour une manipulation simplifiée des données à travers différents composants.
-13. **API REST pour les produits** : Intégration avec une API RESTful pour récupérer les données des produits, gérer le panier, et traiter les commandes.
-14. **Responsive Design** : L’application est conçue pour être accessible sur différents appareils, y compris les ordinateurs de bureau, tablettes et smartphones, grâce à l'utilisation de CSS moderne et de techniques de mise en page réactive.
-15. **Animation et transitions** : Utilisation de bibliothèques comme Framer Motion pour ajouter des animations et transitions fluides pour améliorer l'expérience utilisateur.
-16. **Sécurité de l’application** : Mise en place de mesures de sécurité de base, telles que la validation de formulaires, pour protéger les données des utilisateurs.
-17. **Optimisation des performances** : Grâce à Vite, l'application bénéficie d'un chargement plus rapide et d'un meilleur flux de développement en utilisant l'importation de modules ES natives et la compilation en temps réel.
-18. **Gestion des erreurs** : Affichage des messages d'erreur en cas de problème avec la récupération des données ou les actions de l'utilisateur.
-19. **Tests unitaires et d'intégration** : Utilisation de bibliothèques comme Jest et React Testing Library pour assurer la qualité et la stabilité du code.
-20. **Gestion des routes** : Utilisation de React Router pour la navigation entre les différentes pages de l'application, comme la page d'accueil, les détails des produits, le panier et la confirmation de commande.
-
-## Structure du projet
-
-Voici un aperçu de la structure des fichiers et des dossiers dans ce projet :
-
-```
-Boutique-d-articles-en-ligne/
-│
-├── public/
-│   ├── index.html
-│   └── ...
-│
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── App.js          # Composant principal de l'application
-│   ├── App.css         # Fichier CSS pour les styles de l'application
-│   ├── index.js        # Point d'entrée principal pour React
-│   └── ...
-│
-├── package.json        # Fichier de configuration du projet
-├── vite.config.js      # Configuration pour Vite.js
-└── README.md           # Documentation du projet
-```
-
-## Contribution
-
-Les contributions sont les bienvenues ! Si vous avez des idées d'amélioration ou si vous trouvez des bugs, n'hésitez pas à ouvrir une *issue* ou une *pull request*.
-
-## Licence
-
-Ce projet est sous licence MIT. Vous êtes libre de l'utiliser, le modifier et le distribuer, sous réserve de maintenir la licence originale dans toutes les copies ou versions dérivées.
+> Application e-commerce React complète avec authentification par rôles, panier, favoris, dark mode et dashboard administrateur.
 
 ---
 
-Merci d'avoir exploré ce projet ! J'espère que vous trouverez cette boutique en ligne utile et facile à utiliser. N'hésitez pas à me contacter pour toute question ou suggestion d'amélioration.
+## 📸 Aperçu
+
+> **Pour ajouter vos captures d'écran** : prenez des screenshots de l'app lancée localement, placez-les dans un dossier `/screenshots` à la racine du projet, puis remplacez les chemins ci-dessous.
+
+| Page login | Boutique user | Dashboard admin |
+|:---:|:---:|:---:|
+| ![Login](screenshots/login.png) | ![Boutique](screenshots/shop.png) | ![Admin](screenshots/admin.png) |
+
+| Fiche produit | Panier | Dark mode |
+|:---:|:---:|:---:|
+| ![Détail](screenshots/detail.png) | ![Panier](screenshots/cart.png) | ![Dark](screenshots/dark.png) |
+
+---
+
+## ✨ Fonctionnalités
+
+### 🔐 Authentification & Rôles
+- Page de connexion comme point d'entrée unique
+- Deux comptes simulés : **admin** et **user**
+- Redirection automatique selon le rôle après connexion
+- Routes protégées — accès impossible sans être connecté
+- Dashboard "Admin" visible uniquement pour l'administrateur
+
+### 🛍️ Boutique (côté user)
+- Catalogue complet avec grid responsive 3 colonnes
+- **Barre de recherche** par nom ou marque
+- **Filtres** : prix maximum, note minimale, en stock uniquement
+- **Tri** : prix croissant/décroissant, meilleures notes
+- Cartes produit cliquables avec skeleton loaders au chargement
+- **Fiche produit** : galerie d'images interactive, sélecteur de taille obligatoire
+- **Panier** : ajout/suppression, quantités, livraison offerte dès 100 €
+- **Checkout** en 3 étapes : livraison → paiement → confirmation
+- **Page favoris** avec compteur dans la navbar
+- **Dark mode** avec toggle persisté dans localStorage
+- Design épuré inspiré de Nike.com
+
+### 🖥️ Dashboard Admin
+- Sidebar de navigation dédiée
+- **KPIs** : nombre d'articles, ruptures de stock, CA simulé, commandes en attente
+- **Catalogue** : tableau complet avec ajout, modification et suppression d'articles
+- **Gestion des stocks** : ajustement + / − par article avec indicateurs visuels
+- **Commandes** : liste simulée avec statuts colorés
+
+### 📱 Responsive & UX
+- Adapté mobile, tablette et desktop
+- Skeleton loaders sur toutes les pages catalogue
+- Page 404 avec redirection intelligente selon le rôle
+- Dark mode complet sur toute l'interface user
+
+---
+
+## 🛠️ Stack technique
+
+| Technologie | Usage |
+|---|---|
+| **React 18** | UI et composants |
+| **Vite** | Bundler et dev server |
+| **React Router v6** | Navigation et routes protégées |
+| **Context API + useReducer** | État global (panier, favoris, auth, thème) |
+| **CSS custom properties** | Design system et dark mode |
+| **localStorage** | Persistance panier, favoris, session, thème |
+
+---
+
+## 🚀 Installation rapide
+
+### Prérequis
+- **Node.js** v16 ou supérieur — [télécharger](https://nodejs.org/)
+- **npm** v8 ou supérieur (inclus avec Node.js)
+
+### Étapes
+
+```bash
+# 1. Cloner le dépôt
+git clone https://github.com/YamiUtsukushi/Boutique-d-articles-en-ligne.git
+
+# 2. Aller dans le répertoire
+cd Boutique-d-articles-en-ligne
+
+# 3. Installer les dépendances
+npm install
+
+# 4. Lancer en développement
+npm run dev
+```
+
+L'application s'ouvre sur **http://localhost:5173**
+
+### Comptes de test
+
+| Rôle | Identifiant | Mot de passe | Accès |
+|---|---|---|---|
+| Administrateur | `admin` | `admin123` | Dashboard + gestion catalogue |
+| Utilisateur | `user` | `user123` | Boutique complète |
+
+---
+
+## 📁 Structure du projet
+
+```
+src/
+├── App.jsx                    # Routing principal
+├── App.css                    # Design system complet
+│
+├── context/
+│   ├── AuthContext.jsx        # Authentification et rôles
+│   ├── ShopContext.jsx        # Panier et favoris
+│   └── ThemeContext.jsx       # Dark mode
+│
+├── components/
+│   ├── Navbar.jsx             # Barre de navigation user
+│   ├── ProductCard.jsx        # Carte produit réutilisable
+│   ├── CategoryPage.jsx       # Page catalogue générique
+│   ├── Home.jsx               # Page d'accueil avec filtres
+│   ├── Details.jsx            # Fiche produit
+│   ├── ProtectedRoute.jsx     # Protection des routes
+│   └── SkeletonCard.jsx       # Skeleton loaders
+│
+├── pages/
+│   ├── LoginPage.jsx          # Page de connexion
+│   ├── AdminDashboard.jsx     # Dashboard administrateur
+│   ├── AdminProductForm.jsx   # Formulaire ajout/édition
+│   ├── CartPage.jsx           # Panier
+│   ├── CheckoutPage.jsx       # Tunnel de commande
+│   ├── FavoritesPage.jsx      # Page favoris
+│   └── NotFoundPage.jsx       # Page 404
+│
+└── service/
+    └── data.json              # Catalogue produits (14 articles)
+```
+
+---
+
+## 📝 Scripts disponibles
+
+```bash
+npm run dev      # Démarre le serveur de développement (port 5173)
+npm run build    # Build de production dans /dist
+npm run preview  # Prévisualise le build de production
+npm run lint     # Analyse du code avec ESLint
+```
 
 ---
 
 ## 👨‍💻 Auteur
 
-Projet réalisé par **Jayson MOOKEN**.
-🔗 [Mon profil LinkedIn](https://www.linkedin.com/in/jayson-mooken/)
-
----
-
+Projet réalisé par **Jayson MOOKEN**
+🔗 [LinkedIn](https://www.linkedin.com/in/jayson-mooken/)
