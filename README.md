@@ -6,8 +6,6 @@
 
 ## 📸 Aperçu
 
-> **Pour ajouter vos captures d'écran** : prenez des screenshots de l'app lancée localement, placez-les dans un dossier `/screenshots` à la racine du projet, puis remplacez les chemins ci-dessous.
-
 | Page login | Boutique user | Dashboard admin |
 |:---:|:---:|:---:|
 | ![Login](screenshots/login.png) | ![Boutique](screenshots/shop.png) | ![Admin](screenshots/admin.png) |
